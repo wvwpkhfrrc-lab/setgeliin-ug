@@ -1,514 +1,527 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>💌 Сэтгэлийн үг</title>
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-      background:
-        linear-gradient(
-          135deg,
-          #fff4f7,
-          #f9eefb
-        );
-
-      color: #5b4a52;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: auto;
-      padding: 35px 18px 60px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 35px 15px 25px;
-    }
-
-    .hero-icon {
-      font-size: 55px;
-      animation: float 2.5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%,100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    h1 {
-      margin: 10px 0;
-
-      font-family: Georgia, serif;
-
-      font-size: 34px;
-
-      color: #684b58;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #967d87;
-    }
-
-    .section-title {
-      text-align: center;
-
-      margin:
-        20px 0 20px;
-
-      font-size: 20px;
-
-      color: #765762;
-    }
-
-    .templates {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 15px;
-    }
-
-    .template {
-
-      border: 0;
-
-      background: white;
-
-      border-radius: 22px;
-
-      overflow: hidden;
-
-      cursor: pointer;
-
-      box-shadow:
-        0 8px 25px
-        rgba(130,90,110,0.10);
-
-      transition: 0.25s;
-
-      padding: 0;
-
-      text-align: left;
-    }
-
-    .template:hover {
-      transform: translateY(-4px);
-    }
-
-    .template-image {
-
-      height: 150px;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      font-size: 48px;
-    }
-
-    .pink {
-      background:
-        linear-gradient(
-          135deg,
-          #ffdce8,
-          #fff0f5
-        );
-    }
-
-    .purple {
-      background:
-        linear-gradient(
-          135deg,
-          #eadcff,
-          #f7efff
-        );
-    }
-
-    .blue {
-      background:
-        linear-gradient(
-          135deg,
-          #dff1ff,
-          #f0f9ff
-        );
-    }
-
-    .yellow {
-      background:
-        linear-gradient(
-          135deg,
-          #fff0c9,
-          #fff9e8
-        );
-    }
-
-    .green {
-      background:
-        linear-gradient(
-          135deg,
-          #dff4e7,
-          #f3fff7
-        );
-    }
-
-    .dark {
-      background:
-        linear-gradient(
-          135deg,
-          #3d3548,
-          #66586f
-        );
-    }
-
-    .template-name {
-
-      padding: 15px;
-
-      font-weight: 600;
-
-      font-size: 15px;
-    }
-
-    .template-description {
-
-      padding:
-        0 15px 16px;
-
-      font-size: 12px;
-
-      color: #9b878f;
-    }
-
-    .create {
-
-      margin-top: 25px;
-
-      width: 100%;
-
-      border: 2px dashed #ddb8c5;
-
-      background: rgba(255,255,255,0.65);
-
-      border-radius: 20px;
-
-      padding: 20px;
-
-      font-size: 15px;
-
-      color: #795966;
-
-      cursor: pointer;
-    }
-
-    .footer {
-
-      text-align: center;
-
-      margin-top: 35px;
-
-      color: #b09ba3;
-
-      font-size: 12px;
-    }
-
-    @media (min-width: 700px) {
-
-      .templates {
-
-        grid-template-columns:
-          repeat(3, 1fr);
-
-      }
-
-      .template-image {
-        height: 170px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>💌 Сэтгэлийн үг</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:linear-gradient(135deg,#fff4f8,#f8f1ff);
+ color:#5b4655;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer;border:0}
+header{text-align:center;padding:45px 20px 25px}
+.logo{font-size:55px}
+h1{font-family:Georgia,serif;font-size:42px;margin:15px 0 10px;color:#68485b}
+.subtitle{font-size:17px;line-height:1.7;color:#9b7d8d}
+.container{max-width:1000px;margin:auto;padding:20px}
+.section-title{text-align:center;font-size:28px;margin:25px 0}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:18px;
+}
+.card{
+ background:white;
+ border-radius:28px;
+ overflow:hidden;
+ box-shadow:0 8px 25px #d9b8c833;
+ transition:.2s;
+}
+.card:active{transform:scale(.97)}
+.card-art{
+ height:170px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-size:60px;
+ gap:20px;
+}
+.card-info{padding:18px}
+.card-info h3{margin:0 0 8px;color:#267bd6;font-size:21px}
+.card-info p{margin:0;color:#927b87;line-height:1.5}
+.pink{background:linear-gradient(135deg,#ffd9e8,#fff0f6)}
+.green{background:linear-gradient(135deg,#dff8ed,#effff7)}
+.purple{background:linear-gradient(135deg,#e9ddff,#f8f0ff)}
+.yellow{background:linear-gradient(135deg,#fff1c9,#fffaf0)}
+.blue{background:linear-gradient(135deg,#dff2ff,#f4fbff)}
+.lavender{background:linear-gradient(135deg,#e9e1ff,#f9f5ff)}
+
+.hidden{display:none!important}
+
+.btn{
+ display:block;
+ width:100%;
+ padding:15px;
+ border-radius:18px;
+ background:#f29abb;
+ color:white;
+ font-weight:700;
+ margin-top:18px;
+}
+.btn.secondary{background:#fff;color:#e27da2;border:2px solid #f3c4d4}
+.btn.bluebtn{background:#6d9fe8}
+.btn.greenbtn{background:#76cfa9}
+
+.editor{
+ background:white;
+ border-radius:28px;
+ padding:20px;
+ box-shadow:0 8px 30px #d9b8c833;
+}
+.back{
+ background:transparent;
+ color:#d47799;
+ font-weight:700;
+ padding:5px 0 15px;
+}
+label{display:block;font-weight:700;margin:14px 0 7px}
+input,textarea,select{
+ width:100%;
+ padding:13px 14px;
+ border:2px solid #f0dce5;
+ border-radius:15px;
+ outline:none;
+ background:#fffafd;
+ color:#5b4655;
+}
+textarea{min-height:130px;resize:vertical}
+
+.preview{
+ margin-top:22px;
+ min-height:420px;
+ border-radius:25px;
+ padding:35px 25px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ position:relative;
+ overflow:hidden;
+}
+.preview .decor{font-size:38px;margin-bottom:18px}
+.preview h2{
+ font-family:Georgia,serif;
+ font-size:28px;
+ margin:8px 0 18px;
+}
+.preview .message{
+ white-space:pre-wrap;
+ line-height:1.8;
+ font-size:17px;
+ max-width:600px;
+}
+.preview .from{
+ margin-top:25px;
+ font-style:italic;
+}
+
+.stickers{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin-top:10px;
+}
+.sticker{
+ background:#fff0f5;
+ border:1px solid #f5cad8;
+ border-radius:12px;
+ padding:8px 11px;
+}
+
+.custom-tools{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin-top:10px;
+}
+.small-btn{
+ padding:11px;
+ border-radius:14px;
+ background:#f8edf3;
+ color:#8c6073;
+ font-weight:700;
+}
+
+.footer{text-align:center;padding:45px 15px;color:#a48796}
+
+@media(max-width:600px){
+ h1{font-size:34px}
+ .grid{grid-template-columns:1fr 1fr}
+ .card-art{height:135px;font-size:45px}
+ .card-info{padding:13px}
+ .card-info h3{font-size:17px}
+ .card-info p{font-size:13px}
+}
+</style>
 </head>
-
 
 <body>
 
-  <main class="page">
+<header>
+ <div class="logo">💌</div>
+ <h1>Сэтгэлийн үгээ<br>илэрхийлээрэй</h1>
+ <div class="subtitle">
+  Хэлж амжаагүй үгээ өөрийнхөөрөө<br>
+  хөөрхөн template дээр бичээд илгээгээрэй ♡
+ </div>
+</header>
+
+<main class="container">
+
+<section id="home">
+ <h2 class="section-title">🎀 Template сонгох</h2>
+
+ <div class="grid">
+
+  <div class="card" onclick="openTemplate('love')">
+   <div class="card-art pink">💗 🌷</div>
+   <div class="card-info">
+    <h3>💗 Хайрын захидал</h3>
+    <p>Хайртай хүндээ хэлэх үг</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('thanks')">
+   <div class="card-art green">🌷 💐</div>
+   <div class="card-info">
+    <h3>🌷 Талархлын захидал</h3>
+    <p>Баярлалаа гэж хэлэхэд</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('sorry')">
+   <div class="card-art purple">🥹 💌</div>
+   <div class="card-info">
+    <h3>🥹 Уучлалт гуйх</h3>
+    <p>Хэлэхийг хүссэн уучлал</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('birthday')">
+   <div class="card-art yellow">🎂 🎀</div>
+   <div class="card-info">
+    <h3>🎂 Төрсөн өдөр</h3>
+    <p>Төрсөн өдрийн мэндчилгээ</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('friend')">
+   <div class="card-art blue">👭 🌸</div>
+   <div class="card-info">
+    <h3>👭 Найздаа</h3>
+    <p>Найздаа хэлэх хөөрхөн үг</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('mom')">
+   <div class="card-art pink">👩‍👧 🌷</div>
+   <div class="card-info">
+    <h3>👩‍👧 Ээждээ</h3>
+    <p>Ээждээ зориулсан үг</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('dad')">
+   <div class="card-art blue">👨‍👧 ⭐</div>
+   <div class="card-info">
+    <h3>👨‍👧 Аавдаа</h3>
+    <p>Аавдаа хэлэх сэтгэлийн үг</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('teacher')">
+   <div class="card-art green">👩‍🏫 📚</div>
+   <div class="card-info">
+    <h3>💐 Багшдаа</h3>
+    <p>Багшдаа баярлалаа</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('school')">
+   <div class="card-art yellow">🏫 🎒</div>
+   <div class="card-info">
+    <h3>🏫 Сургууль</h3>
+    <p>Сургуулийн дурсамж</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('class')">
+   <div class="card-art blue">🫶 📚</div>
+   <div class="card-info">
+    <h3>🫶 Ангидаа</h3>
+    <p>Анги хамт олондоо</p>
+   </div>
+  </div>
+
+  <div class="card" onclick="openTemplate('idea')">
+   <div class="card-art lavender">💡 ✨</div>
+   <div class="card-info">
+    <h3>💡 Санаа өгөх</h3>
+    <p>Санал, санаагаа хуваалцаарай</p>
+   </div>
+  </div>
 
-    <section class="hero">
+  <div class="card" onclick="openTemplate('anonymous')">
+   <div class="card-art purple">🌙 💌</div>
+   <div class="card-info">
+    <h3>🌙 Нэргүй захидал</h3>
+    <p>Нэрээ хэлэлгүйгээр</p>
+   </div>
+  </div>
 
-      <div class="hero-icon">
-        💌
-      </div>
+ </div>
 
-      <h1>
-        Сэтгэлийн үгээ илэрхийлээрэй
-      </h1>
+ <button class="btn greenbtn" onclick="openCustom()">
+  🎨 Өөрийн template хийх
+ </button>
+</section>
 
-      <p class="subtitle">
 
-        Хэлж амжаагүй үгээ өөрийнхөөрөө<br>
-        хөөрхөн template дээр бичээд илгээгээрэй ♡
+<section id="editor" class="hidden">
 
-      </p>
+ <div class="editor">
 
-    </section>
+  <button class="back" onclick="goHome()">← Template сонголт руу буцах</button>
 
+  <h2 id="editorTitle">💌 Захидлаа бичээрэй</h2>
 
-    <h2 class="section-title">
-      🎀 Template сонгох
-    </h2>
+  <label>Хэнд зориулсан бэ?</label>
+  <input id="to" placeholder="Жишээ: Миний хамгийн сайн найз">
 
-
-    <section class="templates">
-
-
-      <button class="template">
-
-        <div class="template-image pink">
-          💗🌷
-        </div>
-
-        <div class="template-name">
-          💗 Хайрын захидал
-        </div>
-
-        <div class="template-description">
-          Хайртай хүндээ хэлэх үг
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image green">
-          🌷💐
-        </div>
-
-        <div class="template-name">
-          🌷 Талархлын захидал
-        </div>
-
-        <div class="template-description">
-          Баярлалаа гэж хэлэхэд
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image purple">
-          🥹💌
-        </div>
-
-        <div class="template-name">
-          🥹 Уучлалт гуйх
-        </div>
-
-        <div class="template-description">
-          Хэлэхийг хүссэн уучлалт
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image yellow">
-          🎂🎀
-        </div>
-
-        <div class="template-name">
-          🎂 Төрсөн өдөр
-        </div>
-
-        <div class="template-description">
-          Төрсөн өдрийн мэндчилгээ
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image blue">
-          👭🌸
-        </div>
-
-        <div class="template-name">
-          👭 Найздаа
-        </div>
-
-        <div class="template-description">
-          Найздаа хэлэх сэтгэлийн үг
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image pink">
-          👩‍👧🌷
-        </div>
-
-        <div class="template-name">
-          👩‍👧 Ээждээ
-        </div>
-
-        <div class="template-description">
-          Ээждээ зориулсан үг
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image blue">
-          👨‍👧⭐
-        </div>
-
-        <div class="template-name">
-          👨‍👧 Аавдаа
-        </div>
-
-        <div class="template-description">
-          Аавдаа зориулсан үг
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image green">
-          💐📚
-        </div>
-
-        <div class="template-name">
-          💐 Багшдаа
-        </div>
-
-        <div class="template-description">
-          Багшдаа баярласан сэтгэл
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image yellow">
-          ✨⭐
-        </div>
-
-        <div class="template-name">
-          ✨ Урам өгөх үг
-        </div>
-
-        <div class="template-description">
-          Хэн нэгнийг дэмжихэд
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image dark">
-          💔🌙
-        </div>
-
-        <div class="template-name">
-          💔 Хэлж амжаагүй үг
-        </div>
-
-        <div class="template-description">
-          Дотроо хадгалсан үгс
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image blue">
-          🌙☁️
-        </div>
-
-        <div class="template-name">
-          🌙 Нэргүй захидал
-        </div>
-
-        <div class="template-description">
-          Нэрээ хэлэхгүйгээр
-        </div>
-
-      </button>
-
-
-      <button class="template">
-
-        <div class="template-image pink">
-          🎀🧸
-        </div>
-
-        <div class="template-name">
-          🎀 Cute message
-        </div>
-
-        <div class="template-description">
-          Зүгээр л хөөрхөн мессеж ♡
-        </div>
-
-      </button>
-
-
-    </section>
-
-
-    <button class="create">
-      ＋ 🎨 Өөрийн template хийх
-    </button>
-
-
-    <div class="footer">
-      Made with love ♡
-    </div>
-
-  </main>
+  <label>Өөрийн нэр</label>
+  <input id="from" placeholder="Жишээ: Чиний найз">
+
+  <label>Сэтгэлийн үг 💌</label>
+  <textarea id="message" placeholder="Энд сэтгэлийн үгээ бичээрэй..."></textarea>
+
+  <label>Sticker сонгох 🎀</label>
+  <div class="stickers">
+   <button class="sticker" onclick="addSticker('💗')">💗</button>
+   <button class="sticker" onclick="addSticker('🎀')">🎀</button>
+   <button class="sticker" onclick="addSticker('🌷')">🌷</button>
+   <button class="sticker" onclick="addSticker('⭐')">⭐</button>
+   <button class="sticker" onclick="addSticker('🧸')">🧸</button>
+   <button class="sticker" onclick="addSticker('🌙')">🌙</button>
+   <button class="sticker" onclick="addSticker('✨')">✨</button>
+   <button class="sticker" onclick="addSticker('💐')">💐</button>
+  </div>
+
+  <button class="btn" onclick="updatePreview()">👀 Preview хийх</button>
+  <button class="btn bluebtn" onclick="shareCard()">📤 Илгээх / Share</button>
+
+  <div id="preview" class="preview pink">
+   <div class="decor" id="previewDecor">💗 🌷</div>
+   <h2 id="previewTo">Чамд хэлэх нэг зүйл байна…</h2>
+   <div class="message" id="previewMessage">
+Заримдаа өдөр бүр ярьдаг болохоор
+хамгийн чухал үгээ хэлэхээ мартчихдаг юм байна.
+
+Чи миний хувьд үнэхээр үнэ цэнтэй хүн шүү. 🤍
+   </div>
+   <div class="from" id="previewFrom">— Чиний найз</div>
+  </div>
+
+ </div>
+</section>
+
+
+<section id="custom" class="hidden">
+
+ <div class="editor">
+
+  <button class="back" onclick="goHome()">← Буцах</button>
+
+  <h2>🎨 Өөрийн template хийх</h2>
+
+  <label>Template-ийн нэр</label>
+  <input id="customTitle" placeholder="Жишээ: Миний cute card">
+
+  <label>Гарчиг</label>
+  <input id="customHeading" placeholder="Чамд хэлэх зүйл байна...">
+
+  <label>Өнгө</label>
+  <select id="customColor">
+   <option value="pink">🌸 Ягаан</option>
+   <option value="purple">💜 Нил ягаан</option>
+   <option value="blue">💙 Цэнхэр</option>
+   <option value="green">💚 Ногоон</option>
+   <option value="yellow">💛 Шар</option>
+  </select>
+
+  <label>Өөрийн зураг оруулах 🖼️</label>
+  <input type="file" id="customImage" accept="image/*" onchange="loadImage(event)">
+
+  <label>Sticker</label>
+  <div class="stickers">
+   <button class="sticker" onclick="customSticker('💗')">💗</button>
+   <button class="sticker" onclick="customSticker('🎀')">🎀</button>
+   <button class="sticker" onclick="customSticker('🌷')">🌷</button>
+   <button class="sticker" onclick="customSticker('🧸')">🧸</button>
+   <button class="sticker" onclick="customSticker('⭐')">⭐</button>
+  </div>
+
+  <div id="customPreview" class="preview pink">
+   <div id="customDecor" class="decor">🎀 💗 🌷</div>
+   <h2 id="customHeadingPreview">Чамд хэлэх зүйл байна...</h2>
+   <div class="message">Энэ бол миний өөрийн template ♡</div>
+  </div>
+
+  <button class="btn greenbtn" onclick="saveCustom()">💾 Template хадгалах</button>
+  <button class="btn bluebtn" onclick="shareCustom()">📤 Share хийх</button>
+
+ </div>
+</section>
+
+</main>
+
+<div class="footer">
+ 💌 Made with love ♡<br>
+ Сэтгэлээ өөрийнхөөрөө илэрхийлээрэй
+</div>
+
+
+<script>
+const data={
+ love:["💗 Хайрын захидал","Чамд хэлэх нэг зүйл байна…","pink","💗 🌷"],
+ thanks:["🌷 Талархлын захидал","Баярлалаа гэж хэлмээр байна…","green","🌷 💐"],
+ sorry:["🥹 Уучлалт гуйх","Намайг уучлаарай…","purple","🥹 💌"],
+ birthday:["🎂 Төрсөн өдөр","Төрсөн өдрийн мэнд хүргэе!","yellow","🎂 🎀"],
+ friend:["👭 Найздаа","Чи миний хувьд үнэхээр үнэ цэнтэй найз…","blue","👭 🌸"],
+ mom:["👩‍👧 Ээждээ","Ээжээ, танд хэлэх зүйл байна…","pink","🌷 🤍"],
+ dad:["👨‍👧 Аавдаа","Ааваа, танд баярлалаа…","blue","⭐ 💙"],
+ teacher:["💐 Багшдаа","Танд баярлалаа, багшаа…","green","📚 💐"],
+ school:["🏫 Сургууль","Сургуулийн минь дурсамж…","yellow","🏫 🎒"],
+ class:["🫶 Ангидаа","Манай ангийнхандаа…","blue","🫶 📚"],
+ idea:["💡 Санаа өгөх","Надад нэг санаа байна…","lavender","💡 ✨"],
+ anonymous:["🌙 Нэргүй захидал","Хэлж амжаагүй нэг зүйл…","purple","🌙 💌"]
+};
+
+let current="love";
+let customStickers="";
+let customImg="";
+
+function openTemplate(type){
+ current=type;
+ const d=data[type];
+ document.getElementById("home").classList.add("hidden");
+ document.getElementById("custom").classList.add("hidden");
+ document.getElementById("editor").classList.remove("hidden");
+
+ document.getElementById("editorTitle").innerText=d[0];
+ document.getElementById("previewTo").innerText=d[1];
+ document.getElementById("previewDecor").innerText=d[3];
+ document.getElementById("preview").className="preview "+d[2];
+
+ document.getElementById("to").value="";
+ document.getElementById("from").value="";
+ document.getElementById("message").value="";
+ window.scrollTo(0,0);
+}
+
+function updatePreview(){
+ const d=data[current]||data.love;
+ const to=document.getElementById("to").value.trim();
+ const from=document.getElementById("from").value.trim();
+ const msg=document.getElementById("message").value.trim();
+
+ document.getElementById("previewTo").innerText=to||d[1];
+ document.getElementById("previewMessage").innerText=msg||"Энд таны сэтгэлийн үг харагдана ♡";
+ document.getElementById("previewFrom").innerText="— "+(from||"Нэрээ бичээрэй");
+}
+
+function addSticker(x){
+ document.getElementById("previewDecor").innerText+= " "+x;
+}
+
+async function shareCard(){
+ updatePreview();
+ const text=
+ document.getElementById("previewTo").innerText+"\n\n"+
+ document.getElementById("previewMessage").innerText+"\n\n"+
+ document.getElementById("previewFrom").innerText;
+
+ if(navigator.share){
+  try{
+   await navigator.share({title:"💌 Сэтгэлийн үг",text:text});
+  }catch(e){}
+ }else{
+  await navigator.clipboard.writeText(text);
+  alert("💗 Таны захидлыг хууллаа!");
+ }
+}
+
+function openCustom(){
+ document.getElementById("home").classList.add("hidden");
+ document.getElementById("editor").classList.add("hidden");
+ document.getElementById("custom").classList.remove("hidden");
+ window.scrollTo(0,0);
+}
+
+function customSticker(x){
+ customStickers+=" "+x;
+ document.getElementById("customDecor").innerText=customStickers||"🎀";
+}
+
+document.getElementById("customHeading").addEventListener("input",function(){
+ document.getElementById("customHeadingPreview").innerText=
+ this.value||"Чамд хэлэх зүйл байна...";
+});
+
+document.getElementById("customColor").addEventListener("change",function(){
+ document.getElementById("customPreview").className="preview "+this.value;
+});
+
+function loadImage(e){
+ const file=e.target.files[0];
+ if(!file)return;
+ const reader=new FileReader();
+ reader.onload=function(){
+  customImg=reader.result;
+  const box=document.getElementById("customPreview");
+  box.style.backgroundImage="url('"+customImg+"')";
+  box.style.backgroundSize="cover";
+  box.style.backgroundPosition="center";
+ };
+ reader.readAsDataURL(file);
+}
+
+function saveCustom(){
+ const title=document.getElementById("customTitle").value||"Миний template";
+ localStorage.setItem("myTemplate",JSON.stringify({
+  title:title,
+  heading:document.getElementById("customHeading").value,
+  color:document.getElementById("customColor").value,
+  stickers:customStickers,
+  image:customImg
+ }));
+ alert("🎀 Template хадгалагдлаа!");
+}
+
+async function shareCustom(){
+ const title=document.getElementById("customTitle").value||"Миний cute template";
+ const text=document.getElementById("customHeading").value||"💌 Миний template";
+ if(navigator.share){
+  try{await navigator.share({title:title,text:text})}catch(e){}
+ }else{
+  await navigator.clipboard.writeText(text);
+  alert("💗 Хууллаа!");
+ }
+}
+
+function goHome(){
+ document.getElementById("editor").classList.add("hidden");
+ document.getElementById("custom").classList.add("hidden");
+ document.getElementById("home").classList.remove("hidden");
+ window.scrollTo(0,0);
+}
+</script>
 
 </body>
-
 </html>
