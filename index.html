@@ -1,1 +1,514 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>💌 Сэтгэлийн үг</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff4f7,
+          #f9eefb
+        );
+
+      color: #5b4a52;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 18px 60px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 35px 15px 25px;
+    }
+
+    .hero-icon {
+      font-size: 55px;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    h1 {
+      margin: 10px 0;
+
+      font-family: Georgia, serif;
+
+      font-size: 34px;
+
+      color: #684b58;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #967d87;
+    }
+
+    .section-title {
+      text-align: center;
+
+      margin:
+        20px 0 20px;
+
+      font-size: 20px;
+
+      color: #765762;
+    }
+
+    .templates {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
+    }
+
+    .template {
+
+      border: 0;
+
+      background: white;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px
+        rgba(130,90,110,0.10);
+
+      transition: 0.25s;
+
+      padding: 0;
+
+      text-align: left;
+    }
+
+    .template:hover {
+      transform: translateY(-4px);
+    }
+
+    .template-image {
+
+      height: 150px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      font-size: 48px;
+    }
+
+    .pink {
+      background:
+        linear-gradient(
+          135deg,
+          #ffdce8,
+          #fff0f5
+        );
+    }
+
+    .purple {
+      background:
+        linear-gradient(
+          135deg,
+          #eadcff,
+          #f7efff
+        );
+    }
+
+    .blue {
+      background:
+        linear-gradient(
+          135deg,
+          #dff1ff,
+          #f0f9ff
+        );
+    }
+
+    .yellow {
+      background:
+        linear-gradient(
+          135deg,
+          #fff0c9,
+          #fff9e8
+        );
+    }
+
+    .green {
+      background:
+        linear-gradient(
+          135deg,
+          #dff4e7,
+          #f3fff7
+        );
+    }
+
+    .dark {
+      background:
+        linear-gradient(
+          135deg,
+          #3d3548,
+          #66586f
+        );
+    }
+
+    .template-name {
+
+      padding: 15px;
+
+      font-weight: 600;
+
+      font-size: 15px;
+    }
+
+    .template-description {
+
+      padding:
+        0 15px 16px;
+
+      font-size: 12px;
+
+      color: #9b878f;
+    }
+
+    .create {
+
+      margin-top: 25px;
+
+      width: 100%;
+
+      border: 2px dashed #ddb8c5;
+
+      background: rgba(255,255,255,0.65);
+
+      border-radius: 20px;
+
+      padding: 20px;
+
+      font-size: 15px;
+
+      color: #795966;
+
+      cursor: pointer;
+    }
+
+    .footer {
+
+      text-align: center;
+
+      margin-top: 35px;
+
+      color: #b09ba3;
+
+      font-size: 12px;
+    }
+
+    @media (min-width: 700px) {
+
+      .templates {
+
+        grid-template-columns:
+          repeat(3, 1fr);
+
+      }
+
+      .template-image {
+        height: 170px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+    <section class="hero">
+
+      <div class="hero-icon">
+        💌
+      </div>
+
+      <h1>
+        Сэтгэлийн үгээ илэрхийлээрэй
+      </h1>
+
+      <p class="subtitle">
+
+        Хэлж амжаагүй үгээ өөрийнхөөрөө<br>
+        хөөрхөн template дээр бичээд илгээгээрэй ♡
+
+      </p>
+
+    </section>
+
+
+    <h2 class="section-title">
+      🎀 Template сонгох
+    </h2>
+
+
+    <section class="templates">
+
+
+      <button class="template">
+
+        <div class="template-image pink">
+          💗🌷
+        </div>
+
+        <div class="template-name">
+          💗 Хайрын захидал
+        </div>
+
+        <div class="template-description">
+          Хайртай хүндээ хэлэх үг
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image green">
+          🌷💐
+        </div>
+
+        <div class="template-name">
+          🌷 Талархлын захидал
+        </div>
+
+        <div class="template-description">
+          Баярлалаа гэж хэлэхэд
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image purple">
+          🥹💌
+        </div>
+
+        <div class="template-name">
+          🥹 Уучлалт гуйх
+        </div>
+
+        <div class="template-description">
+          Хэлэхийг хүссэн уучлалт
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image yellow">
+          🎂🎀
+        </div>
+
+        <div class="template-name">
+          🎂 Төрсөн өдөр
+        </div>
+
+        <div class="template-description">
+          Төрсөн өдрийн мэндчилгээ
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image blue">
+          👭🌸
+        </div>
+
+        <div class="template-name">
+          👭 Найздаа
+        </div>
+
+        <div class="template-description">
+          Найздаа хэлэх сэтгэлийн үг
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image pink">
+          👩‍👧🌷
+        </div>
+
+        <div class="template-name">
+          👩‍👧 Ээждээ
+        </div>
+
+        <div class="template-description">
+          Ээждээ зориулсан үг
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image blue">
+          👨‍👧⭐
+        </div>
+
+        <div class="template-name">
+          👨‍👧 Аавдаа
+        </div>
+
+        <div class="template-description">
+          Аавдаа зориулсан үг
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image green">
+          💐📚
+        </div>
+
+        <div class="template-name">
+          💐 Багшдаа
+        </div>
+
+        <div class="template-description">
+          Багшдаа баярласан сэтгэл
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image yellow">
+          ✨⭐
+        </div>
+
+        <div class="template-name">
+          ✨ Урам өгөх үг
+        </div>
+
+        <div class="template-description">
+          Хэн нэгнийг дэмжихэд
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image dark">
+          💔🌙
+        </div>
+
+        <div class="template-name">
+          💔 Хэлж амжаагүй үг
+        </div>
+
+        <div class="template-description">
+          Дотроо хадгалсан үгс
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image blue">
+          🌙☁️
+        </div>
+
+        <div class="template-name">
+          🌙 Нэргүй захидал
+        </div>
+
+        <div class="template-description">
+          Нэрээ хэлэхгүйгээр
+        </div>
+
+      </button>
+
+
+      <button class="template">
+
+        <div class="template-image pink">
+          🎀🧸
+        </div>
+
+        <div class="template-name">
+          🎀 Cute message
+        </div>
+
+        <div class="template-description">
+          Зүгээр л хөөрхөн мессеж ♡
+        </div>
+
+      </button>
+
+
+    </section>
+
+
+    <button class="create">
+      ＋ 🎨 Өөрийн template хийх
+    </button>
+
+
+    <div class="footer">
+      Made with love ♡
+    </div>
+
+  </main>
+
+</body>
+
+</html>
