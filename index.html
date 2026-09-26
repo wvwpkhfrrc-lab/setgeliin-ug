@@ -714,30 +714,46 @@ onAuthStateChanged(auth, (user) => {
   }
 });
   document.getElementById("addTemplateBtn").onclick = async () => {
-    const user = auth.currentUser;
 
-    if (!user || user.email !== "sainaasj0@gmail.com") {
-      alert("⛔ Admin эрх шаардлагатай.");
-      return;
-    }
+  const user = auth.currentUser;
 
-    try {
-      await addDoc(collection(db, "templates"), {
-        title: document.getElementById("adminTitle").value,
-        category: document.getElementById("adminCategory").value,
-        description: document.getElementById("adminDescription").value,
-        imageUrl: document.getElementById("adminImage").value,
-        active: "true"
-      });
+  if (!user || user.email !== "sainaasj0@gmail.com") {
+    alert("⛔ Admin эрх шаардлагатай.");
+    return;
+  }
 
-      document.getElementById("adminMessage").textContent =
-        "✅ Template амжилттай нэмэгдлээ!";
+  const title = document.getElementById("adminTitle").value.trim();
+  const category = document.getElementById("adminCategory").value.trim();
+  const description = document.getElementById("adminDescription").value.trim();
+  const imageUrl = document.getElementById("adminImage").value.trim();
 
-    } catch (error) {
-      document.getElementById("adminMessage").textContent =
-        "❌ Алдаа: " + error.message;
-    }
-  };
+  if (!title) {
+    alert("⚠️ Template нэрээ оруулна уу.");
+    return;
+  }
+
+  try {
+
+    await addDoc(collection(db, "templates"), {
+      title: title,
+      category: category,
+      description: description,
+      imageUrl: imageUrl,
+      active: true,
+      createdAt: new Date()
+    });
+
+    document.getElementById("adminMessage").textContent =
+      "✅ Template амжилттай нэмэгдлээ!";
+
+  } catch (error) {
+
+    document.getElementById("adminMessage").textContent =
+      "❌ Алдаа: " + error.message;
+
+  }
+
+};
 </script>
 </body>
 </html>
