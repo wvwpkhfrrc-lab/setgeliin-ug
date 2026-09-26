@@ -665,5 +665,70 @@ const firebaseConfig = {
     }
   });
 </script>
+<div id="adminPanel" style="display:none;max-width:900px;margin:20px auto;padding:24px;background:white;border-radius:24px;box-shadow:0 10px 30px #0001">
+  <h2>👑 Admin Panel</h2>
+  <p>Template удирдах хэсэг</p>
+
+  <input id="adminTitle" placeholder="Template нэр"
+    style="width:100%;padding:12px;margin:6px 0">
+
+  <input id="adminCategory" placeholder="Ангилал: love, friend гэх мэт"
+    style="width:100%;padding:12px;margin:6px 0">
+
+  <input id="adminDescription" placeholder="Тайлбар"
+    style="width:100%;padding:12px;margin:6px 0">
+
+  <input id="adminImage" placeholder="Зургийн URL"
+    style="width:100%;padding:12px;margin:6px 0">
+
+  <button id="addTemplateBtn"
+    style="padding:13px 20px;border:0;border-radius:14px;background:#e88bb5;color:white">
+    ➕ Template нэмэх
+  </button>
+
+  <p id="adminMessage"></p>
+</div>
+
+<script type="module">
+  import {
+    collection,
+    addDoc
+  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+  const db = window.firebaseDB;
+  const auth = window.firebaseAuth;
+
+  auth.onAuthStateChanged?.((user) => {
+    if (user && user.email === "sainaasj0@gmail.com") {
+      document.getElementById("adminPanel").style.display = "block";
+    }
+  });
+
+  document.getElementById("addTemplateBtn").onclick = async () => {
+    const user = auth.currentUser;
+
+    if (!user || user.email !== "sainaasj0@gmail.com") {
+      alert("⛔ Admin эрх шаардлагатай.");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "templates"), {
+        title: document.getElementById("adminTitle").value,
+        category: document.getElementById("adminCategory").value,
+        description: document.getElementById("adminDescription").value,
+        imageUrl: document.getElementById("adminImage").value,
+        active: "true"
+      });
+
+      document.getElementById("adminMessage").textContent =
+        "✅ Template амжилттай нэмэгдлээ!";
+
+    } catch (error) {
+      document.getElementById("adminMessage").textContent =
+        "❌ Алдаа: " + error.message;
+    }
+  };
+</script>
 </body>
 </html>
