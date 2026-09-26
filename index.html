@@ -699,7 +699,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const app = getApp();
-const db = getFirestore(app);
+const db = getFirestore();
 const auth = window.firebaseAuth;
 
   auth.onAuthStateChanged?.((user) => {
