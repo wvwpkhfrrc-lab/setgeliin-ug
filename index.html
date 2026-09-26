@@ -697,17 +697,21 @@ import {
   collection,
   addDoc
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 const app = getApp();
 const db = getFirestore();
-const auth = window.firebaseAuth;
+const auth = window.firebaseauth;
+ 
+onAuthStateChanged(auth, (user) => {
+  const panel = document.getElementById("adminPanel");
 
-  auth.onAuthStateChanged?.((user) => {
-    if (user && user.email === "sainaasj0@gmail.com") {
-      document.getElementById("adminPanel").style.display = "block";
-    }
-  });
-
+  if (panel) {
+    panel.style.display =
+      user && user.email === "sainaasj0@gmail.com"
+        ? "block"
+        : "none";
+  }
+});
   document.getElementById("addTemplateBtn").onclick = async () => {
     const user = auth.currentUser;
 
