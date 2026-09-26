@@ -549,5 +549,121 @@ const firebaseConfig = {
   const auth = getAuth(app);
   window.firebaseAuth = auth;
 </script>
+<script type="module">
+  import {
+    onAuthStateChanged,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+  const auth = window.firebaseAuth;
+  const ADMIN_EMAIL = "sainaasj0@gmail.com";
+
+  const box = document.createElement("div");
+
+  box.innerHTML = `
+    <div id="authBox" style="
+      max-width:900px;
+      margin:20px auto;
+      padding:20px;
+      background:white;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      text-align:center;
+    ">
+      <h2>💌 Нэвтрэх</h2>
+
+      <input id="emailInput"
+        type="email"
+        placeholder="Имэйл хаяг"
+        style="width:90%;padding:14px;margin:6px;border-radius:14px;border:1px solid #ddd">
+
+      <input id="passwordInput"
+        type="password"
+        placeholder="Нууц үг"
+        style="width:90%;padding:14px;margin:6px;border-radius:14px;border:1px solid #ddd">
+
+      <br>
+
+      <button id="loginBtn"
+        style="padding:13px 22px;margin:8px;border:0;border-radius:15px;background:#e88bb5;color:white;font-size:16px">
+        🔐 Нэвтрэх
+      </button>
+
+      <button id="registerBtn"
+        style="padding:13px 22px;margin:8px;border:0;border-radius:15px;background:#78a8e8;color:white;font-size:16px">
+        ✨ Бүртгүүлэх
+      </button>
+
+      <button id="logoutBtn"
+        style="display:none;padding:13px 22px;margin:8px;border:0;border-radius:15px;background:#777;color:white;font-size:16px">
+        🚪 Гарах
+      </button>
+
+      <p id="authStatus"></p>
+    </div>
+  `;
+
+  document.body.insertBefore(box, document.body.firstChild);
+
+  const email = document.getElementById("emailInput");
+  const password = document.getElementById("passwordInput");
+  const status = document.getElementById("authStatus");
+
+  document.getElementById("registerBtn").onclick = async () => {
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        email.value,
+        password.value
+      );
+
+      status.textContent = "💗 Бүртгэл амжилттай!";
+    } catch (error) {
+      status.textContent = "❌ " + error.message;
+    }
+  };
+
+  document.getElementById("loginBtn").onclick = async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        email.value,
+        password.value
+      );
+
+      status.textContent = "💗 Амжилттай нэвтэрлээ!";
+    } catch (error) {
+      status.textContent = "❌ Имэйл эсвэл нууц үг буруу байна.";
+    }
+  };
+
+  document.getElementById("logoutBtn").onclick = async () => {
+    await signOut(auth);
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      status.innerHTML =
+        "💗 Нэвтэрсэн: <b>" + user.email + "</b>";
+
+      document.getElementById("loginBtn").style.display = "none";
+      document.getElementById("registerBtn").style.display = "none";
+      document.getElementById("logoutBtn").style.display = "inline-block";
+
+      if (user.email === ADMIN_EMAIL) {
+        status.innerHTML +=
+          "<br><br>👑 <b>ADMIN MODE</b> идэвхтэй";
+      }
+    } else {
+      status.textContent = "Нэвтрээгүй байна.";
+
+      document.getElementById("loginBtn").style.display = "inline-block";
+      document.getElementById("registerBtn").style.display = "inline-block";
+      document.getElementById("logoutBtn").style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
