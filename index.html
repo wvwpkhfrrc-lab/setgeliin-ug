@@ -690,13 +690,17 @@ const firebaseConfig = {
 </div>
 
 <script type="module">
-  import {
-    collection,
-    addDoc
-  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { getApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 
-  const db = window.firebaseDB;
-  const auth = window.firebaseAuth;
+import {
+  getFirestore,
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const app = getApp();
+const db = getFirestore(app);
+const auth = window.firebaseAuth;
 
   auth.onAuthStateChanged?.((user) => {
     if (user && user.email === "sainaasj0@gmail.com") {
