@@ -653,6 +653,7 @@ const firebaseConfig = {
       document.getElementById("logoutBtn").style.display = "inline-block";
 
       if (user.email === ADMIN_EMAIL) {
+       document.getElementById("adminPanel").style.display = "block";
         status.innerHTML +=
           "<br><br>👑 <b>ADMIN MODE</b> идэвхтэй";
       }
